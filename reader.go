@@ -163,6 +163,8 @@ func (r *Reader) processKeypress(kp Keypress) (output string, ok bool) {
 		line.DeleteRuneUnderCursor()
 	case KeyCtrlU:
 		line.DeleteToBeginningOfLine()
+	case KeyCtrlC:
+		line.Clear()
 	default:
 		if !isPrintable(key) {
 			return
